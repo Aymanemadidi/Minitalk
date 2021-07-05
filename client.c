@@ -1,6 +1,6 @@
 #include "minitalk.h"
 
-void	binary_calcul(char *str, unsigned char *binary, int lenght)
+void	convert_to_binary(char *str, unsigned char *binary, int lenght)
 {
 	int				j;
 	int				k;
@@ -36,11 +36,11 @@ unsigned char	*str_to_bin(char *str)
 	binary = (unsigned char *)malloc(8 * lenght);
 	while (i < 8 * lenght)
 		binary[i++] = 0;
-	binary_calcul(str, binary, lenght);
+	convert_to_binary(str, binary, lenght);
 	return (binary);
 }
 
-void	conditions(unsigned char *binary, char **argv, int i)
+void	send_signals(unsigned char *binary, char **argv, int i)
 {
 	if (binary[i] == 1)
 	{
@@ -74,8 +74,8 @@ int	main(int argc, char **argv)
 	binary = str_to_bin(argv[2]);
 	while (++i < (8 * (int)ft_strlen(argv[2])))
 	{
-		conditions(binary, argv, i);
-		usleep(100);
+		send_signals(binary, argv, i);
+		usleep(50);
 	}
 	ft_putstr("Message sent successfully");
 }

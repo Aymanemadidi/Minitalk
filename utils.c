@@ -1,15 +1,15 @@
 #include "minitalk.h"
 
-void	ft_putstr(char *s)
+void	ft_putstr(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	if (s)
+	if (str)
 	{
-		while (s[i])
+		while (str[i])
 		{
-			write(1, &s[i], 1);
+			write(1, &str[i], 1);
 			i++;
 		}
 	}
@@ -43,7 +43,7 @@ int	ft_atoi(const char *str)
 
 size_t	ft_strlen(const char *str)
 {
-	size_t length;
+	size_t	length;
 
 	length = 0;
 	while (str[length])
@@ -53,7 +53,7 @@ size_t	ft_strlen(const char *str)
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)
@@ -63,12 +63,12 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 
-int ft_pow(int base, int exponent)
+int	ft_pow2(int exponent)
 {
 	int	result;
 
 	result = 1;
 	while (exponent--)
-		result = result * base;
+		result = result * 2;
 	return (result);
 }

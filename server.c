@@ -1,25 +1,24 @@
 #include "minitalk.h"
 
-char	n;
-int		i;
+t_vars	g_v;
 
-void	func(int nb)
+void	func(int signal)
 {
-	if (nb == SIGUSR1)
-		n += ft_pow(2, i);
-	i--;
-	if (i == -1)
+	if (signal == SIGUSR1)
+		g_v.n += ft_pow2(g_v.i);
+	g_v.i--;
+	if (g_v.i == -1)
 	{
-		write(1, &n, 1);
-		n = 0;
-		i = 7;
+		write(1, &g_v.n, 1);
+		g_v.n = 0;
+		g_v.i = 7;
 	}
 }
 
 int	main(void)
-{
-	i = 7;
-	n = 0;
+{	
+	g_v.i = 7;
+	g_v.n = 0;
 	signal(SIGUSR1, func);
 	signal(SIGUSR2, func);
 	ft_putstr("the PID is : ");
