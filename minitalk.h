@@ -7,12 +7,6 @@
 # include <stdio.h>
 # include <math.h>
 
-typedef struct s_vars
-{
-	int	n;
-	int	i;
-}				t_vars;
-
 void	ft_putstr(char *str);
 void	ft_putnbr(int nb);
 int		ft_atoi(const char *str);
