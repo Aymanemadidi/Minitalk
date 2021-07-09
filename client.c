@@ -1,6 +1,6 @@
 #include "minitalk.h"
 
-void	convert_to_binary(char *str, unsigned char *binary, int lenght)
+void	convert_to_binary(char *str, unsigned char *binary, int length)
 {
 	int				j;
 	int				k;
@@ -10,7 +10,7 @@ void	convert_to_binary(char *str, unsigned char *binary, int lenght)
 	j = 0;
 	k = 8;
 	i = 0;
-	while (i < lenght)
+	while (i < length)
 	{
 		val = str[i];
 		j = k - 1;
@@ -28,15 +28,15 @@ void	convert_to_binary(char *str, unsigned char *binary, int lenght)
 unsigned char	*str_to_bin(char *str)
 {
 	int				i;
-	int				lenght;
+	int				length;
 	unsigned char	*binary;
 
 	i = 0;
-	lenght = ft_strlen(str);
-	binary = (unsigned char *)malloc(8 * lenght);
-	while (i < 8 * lenght)
+	length = ft_strlen(str);
+	binary = (unsigned char *)malloc(8 * length);
+	while (i < 8 * length)
 		binary[i++] = 0;
-	convert_to_binary(str, binary, lenght);
+	convert_to_binary(str, binary, length);
 	return (binary);
 }
 
