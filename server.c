@@ -1,5 +1,15 @@
 #include "minitalk.h"
 
+int	ft_pow2(int exponent)
+{
+	int	result;
+
+	result = 1;
+	while (exponent--)
+		result = result * 2;
+	return (result);
+}
+
 void	handler(int signal)
 {	
 	static int i = 7;

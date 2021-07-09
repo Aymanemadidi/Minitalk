@@ -2,8 +2,7 @@ FLAGS = -Wall -Wextra -Werror
 SERVER = server
 CLIENT = client
 
-SRCS = utils.c \
-       ft_putnbr.c
+SRCS = utils.c
 NAME = $(SERVER) $(CLIENT)
 
 all : $(NAME)
